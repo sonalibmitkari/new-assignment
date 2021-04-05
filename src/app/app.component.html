@@ -1,0 +1,86 @@
+<div fxLayout="column">
+  <!-- toolbar -->
+  <mat-toolbar class="toolbar-background">
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxFlex="100">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button ><mat-icon>menu</mat-icon></button>
+      <h1 class="font-weight-600">Users</h1>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="end center">
+      <button mat-icon-button class="pr-16"><mat-icon class="font-48">account_circle</mat-icon></button>
+      <h1 class="font-weight-600 pl-16">Jhon Doe</h1>
+    </div>
+    </div>
+  </mat-toolbar>
+
+  <!-- page content -->
+  <div fxLayout="row wrap" fxFlex="100" class="p-16">
+    <div  fxFlex.gt-md="75" fxFlex="100" class="pr-16 p-0 pt-16">
+      <h1 class="font-weight-600 pb-16">User List</h1>
+      <div class="border">
+        <div class="overflow-auto">
+          <table mat-table [dataSource]="dataSource" class=" w-100-p">
+
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+
+            
+            <!-- email Column -->
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> Email </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+
+            <!-- gender Column -->
+            <ng-container matColumnDef="gender">
+              <th mat-header-cell *matHeaderCellDef> Gender </th>
+              <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+            </ng-container>
+
+              <!-- address Column -->
+              <ng-container matColumnDef="address">
+                <th mat-header-cell *matHeaderCellDef> Address </th>
+                <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+              </ng-container>
+
+            <!-- address Column -->
+            <ng-container matColumnDef="action">
+              <th mat-header-cell *matHeaderCellDef> Action </th>
+              <td mat-cell *matCellDef="let element">
+                <button mat-icon-button (click)="openDialogEdit()" aria-label="Example icon button with a menu icon">
+                  <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button (click)="openDialogDelete()" aria-label="Example icon button with a menu icon">
+                  <mat-icon>delete</mat-icon>
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        <mat-paginator [pageSize]="30"></mat-paginator>
+      </div>
+    </div>
+    <div fxFlex.gt-md="25" fxFlex="100" class="pt-16">
+      <h1 class="font-weight-600">Progress</h1>
+      <mat-progress-bar mode="determinate" value="60" class="pt-16"></mat-progress-bar>
+      <div fxLayout="row" class="pt-16 ">
+        <span class="font-weight-600 pr-16"> Male Users : </span>
+        <span>6</span>
+      </div>
+      <div fxLayout="row" class="pt-16 ">
+        <span class="font-weight-600 pr-16"> Female Users : </span>
+        <span>0</span>
+      </div>
+      
+      </div>
+  </div>
+</div>
+
+

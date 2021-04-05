@@ -1,0 +1,109 @@
+// scss for page
+:host {
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+    margin: 0px!important;
+}
+
+/* common classes */
+.w-100-p{
+    width:100%;
+}
+
+.font-weight-600{
+    font-weight: 600;
+}
+
+.font-48{
+    font-size: 48px;
+}
+
+.border{
+    border:1px solid #e0e0e0;
+}
+
+.overflow-auto{
+    overflow: auto;
+}
+
+/* padding classes */
+.p-16{
+    padding: 16px;
+}
+
+.pr-16{
+    padding-right: 16px;
+}
+
+.pt-16{
+    padding-top: 16px;
+}
+
+.pb-16{
+    padding-bottom:16px;
+}
+
+.pl-16{
+    padding-left: 16px;
+}
+
+/* scss for header toolbar */
+.toolbar-background{
+    background-color: #00a99d!important;
+    color: white;
+}
+
+/* table style */
+table{
+    th{
+        color:#333;
+        font-weight:600;
+    }
+    td{
+        color:#333;
+    }
+}
+
+
+
+// style for dialog box
+.dialog-box-width{
+    min-width: 80vw;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+// media querry
+
+@media screen and (max-width: 1024px) {
+ .p-0{
+     padding:0px;
+ }
+}
+
+@media screen and (max-width: 768px) {
+    table{
+        th{
+            min-width: 25vw;
+        }
+        td{
+            min-width: 25vw;
+        }
+    }
+}
+
+
+@media screen and (max-width: 425px) {
+    table{
+        th{
+            min-width: 42vw;
+        }
+        td{
+            min-width: 42vw;
+        }
+    }
+}
